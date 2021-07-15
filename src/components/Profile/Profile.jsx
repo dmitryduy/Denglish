@@ -38,9 +38,8 @@ const ProgressBar = styled.div`
     position: absolute;
     top: -2px;
     transform: translateX(-50%);
-    color: #fff;
+    color: #010101;
     left: 50%;
-    z-index: 10;
   }
  
 `;
@@ -79,7 +78,7 @@ const Profile = () => {
         <ProfileContainer>
             <div className="profile__level">
                 <ProgressBar points={currentPoints} total={totalPoints} progress={(currentPoints / totalPoints) * 100}/>
-                <Level>Level: <span>{levelName}</span></Level>
+                <Level>Уровень: <span>{levelName}</span></Level>
             </div>
             <Avatar/>
         </ProfileContainer>

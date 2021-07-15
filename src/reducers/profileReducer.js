@@ -1,7 +1,7 @@
-const initialState = {
-    levelName: 'atlantic',
-    currentPoints: 400,
-    totalPoints: 500,
+const initialState = JSON.parse(localStorage.getItem('profile')) || {
+    levelName: 'newbie',
+    currentPoints: 0,
+    totalPoints: 100
 }
 
 const profileReducer = (state=initialState, action) => {

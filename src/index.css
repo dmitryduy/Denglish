@@ -17,3 +17,8 @@ button {
 body {
     font-family: 'Noto Sans', sans-serif;
 }
+
+input {
+    border: none;
+    outline: none;
+}
