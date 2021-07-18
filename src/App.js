@@ -1,32 +1,21 @@
-import React, {useEffect} from "react";
+import React from "react";
 
-import {useDispatch} from "react-redux";
+import {HashRouter} from "react-router-dom";
+import firebase from "firebase";
+import {useAuthState} from "react-firebase-hooks/auth";
 
 import "./index.css";
-import LoginPage from "./components/LoginPage/LoginPage";
-import HomePage from "./components/HomePage/HomePage";
-import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
-import RegisterPage from "./components/RegisterPage/RegisterPage";
-import firebase from "firebase";
-import {setAuth} from "./reducers/authReducer";
+import Routes from "./components/Routes/Routes";
+import Loading from "./components/Loading/Loading";
 
 function App() {
-    const dispatch = useDispatch();
+    const [, loading] = useAuthState(firebase.auth());
 
-    useEffect(() => {
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                dispatch(setAuth(user.email))
-            }
-        })
-    }, []);
+    if (loading) return <Loading/>
+
     return (
         <HashRouter>
-            <Switch>
-                <Route path='/login' component={LoginPage}/>
-                <Route path='/registration' component={RegisterPage}/>
-                <Route path='/' exact component={HomePage}/>
-            </Switch>
+            <Routes/>
         </HashRouter>
     )
 }

@@ -1,14 +1,13 @@
 const LOGIN = 'LOGIN';
 
 const initialState = {
-    auth: false,
     email: null,
 }
 
 const authReducer = (state=initialState, action) => {
     switch (action.type) {
         case LOGIN:
-            return {auth: true, email: action.payload};
+            return {email: action.payload};
         default:
             return state;
     }
