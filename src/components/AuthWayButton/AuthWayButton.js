@@ -1,9 +1,8 @@
 import React from "react";
 
 import styled from "styled-components";
-import {Link} from "react-router-dom";
 
-const Button = styled(Link)`
+const Button = styled.a`
   border-radius: 20px;
   color: #00adb5;
   cursor: pointer;
@@ -13,12 +12,14 @@ const Button = styled(Link)`
   &:hover {
     opacity: .7;
   }
+  @media (max-width: 600px) {
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
 `;
 
 const AuthWayButton = ({children, to}) => {
-    return (
-        <Button to={to}>{children}</Button>
-    )
+    return <Button href={to}>{children}</Button>;
 }
 
 export default AuthWayButton;

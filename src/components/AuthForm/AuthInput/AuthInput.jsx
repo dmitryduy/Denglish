@@ -9,6 +9,10 @@ const Input = styled.input`
   padding: 10px;
   font-size: 20px;
   margin-bottom: 40px;
+  @media (max-width: 600px) {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 `;
 
 const AuthInput = ({id, type, value, onInput}) => {

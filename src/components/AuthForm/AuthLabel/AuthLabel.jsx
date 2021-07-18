@@ -7,6 +7,9 @@ const Label = styled.label`
   text-align: left;
   color: #a7b0b7;
   margin-bottom: 10px;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const AuthLabel = ({children, htmlFor}) => {

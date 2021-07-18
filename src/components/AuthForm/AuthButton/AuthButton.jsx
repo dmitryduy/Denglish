@@ -15,6 +15,10 @@ const Button = styled.button`
   &:hover {
     opacity: .7;
   }
+  @media (max-width: 600px) {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
 `;
 
 const AuthButton = ({children}) => {
